@@ -1,4 +1,4 @@
-#define menu "Operations:\n1)Addition\n2)Subtraction\n3)Multiplication\n4)Multiplication by a number\n5)Division by a number\n6)Trace\n0)Exit\n"
+#define menu "Operations:\n1)Addition\n2)Subtraction\n3)Multiplication\n4)Multiplication by a number\n5)Division by a number\n6)Trace\n7)Comparison\n0)Exit\n"
 
 #include "matrix.h"
 #include "stdlib.h"
@@ -78,7 +78,6 @@ matrix<std::complex<double>> cdoubleinit()
 
 
 
-
 int main()
 {
 	unsigned choice = 1, number;
@@ -94,12 +93,19 @@ int main()
 	{
 	case 1:
 	{
+		system("cls");
 		std::cout << "First matrix:" << std::endl;
 		matrix<int> first_matrix = intinit();
+		system("cls");
 		std::cout << "Second matrix:" << std::endl;
 		matrix<int> second_matrix = intinit();
+		system("cls");
 		while (choice)
 		{
+			std::cout << "First matrix:" << std::endl;
+			std::cout << first_matrix << std::endl;
+			std::cout << "Second matrix:" << std::endl;
+			std::cout << second_matrix << std::endl;
 			std::cout << menu;
 			std::cin >> choice;
 			switch (choice)
@@ -107,6 +113,12 @@ int main()
 			case 1:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;
 				try {
 					matrix<int> res = first_matrix + second_matrix;
 					std::cout << res << std::endl;
@@ -119,6 +131,12 @@ int main()
 			case 2:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;
 				try {
 					matrix<int> res = first_matrix - second_matrix;
 					std::cout << res << std::endl;
@@ -131,6 +149,12 @@ int main()
 			case 3:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;
 				try {
 					matrix<int> res = first_matrix * second_matrix;
 					std::cout << res << std::endl;
@@ -143,11 +167,17 @@ int main()
 			case 4:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
 				int mvalue;
 				std::cout << "Number of matrix?" << std::endl;
 				std::cin >> number;
 				std::cout << "Value:";
 				std::cin >> mvalue;
+				std::cout << "Result:" << std::endl;
 				if (number == 1) {
 					try {
 						matrix<int> res = first_matrix * mvalue;
@@ -171,11 +201,17 @@ int main()
 			case 5:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
 				int dvalue;
 				std::cout << "Number of matrix?" << std::endl;
 				std::cin >> number;
 				std::cout << "Value:";
 				std::cin >> dvalue;
+				std::cout << "Result:" << std::endl;
 				if (number == 1) {
 					try {
 						matrix<int> res = first_matrix / dvalue;
@@ -199,8 +235,14 @@ int main()
 			case 6:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
 				std::cout << "Number of matrix?" << std::endl;
 				std::cin >> number;
+				std::cout << "Result:" << std::endl;
 				if (number == 1) {
 					try {
 						int res = first_matrix.Trace();
@@ -221,6 +263,18 @@ int main()
 				}
 				break;
 			}
+			case 7:
+			{
+				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;
+				(first_matrix == second_matrix) ? (std::cout << "Equal" << std::endl) : (std::cout << "Not equal" << std::endl);
+				break;
+			}
 			case 0:
 				system("cls");
 				choice = 0;
@@ -234,12 +288,19 @@ int main()
 	}
 	case 2:
 	{
+		system("cls");
 		std::cout << "First matrix:" << std::endl;
 		matrix<float> first_matrix = floatinit();
+		system("cls");
 		std::cout << "Second matrix:" << std::endl;
 		matrix<float> second_matrix = floatinit();
+		system("cls");
 		while (choice)
 		{
+			std::cout << "First matrix:" << std::endl;
+			std::cout << first_matrix << std::endl;
+			std::cout << "Second matrix:" << std::endl;
+			std::cout << second_matrix << std::endl;
 			std::cout << menu;
 			std::cin >> choice;
 			switch (choice)
@@ -247,6 +308,12 @@ int main()
 			case 1:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;
 				try {
 					matrix<float> res = first_matrix + second_matrix;
 					std::cout << res << std::endl;
@@ -259,6 +326,12 @@ int main()
 			case 2:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;
 				try {
 					matrix<float> res = first_matrix - second_matrix;
 					std::cout << res << std::endl;
@@ -271,6 +344,12 @@ int main()
 			case 3:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;
 				try {
 					matrix<float> res = first_matrix * second_matrix;
 					std::cout << res << std::endl;
@@ -283,11 +362,17 @@ int main()
 			case 4:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
 				float mvalue;
 				std::cout << "Number of matrix?" << std::endl;
 				std::cin >> number;
 				std::cout << "Value";
 				std::cin >> mvalue;
+				std::cout << "Result:" << std::endl;
 				if (number == 1) {
 					try {
 						matrix<float> res = first_matrix * mvalue;
@@ -311,11 +396,17 @@ int main()
 			case 5:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
 				float dvalue;
 				std::cout << "Number of matrix?" << std::endl;
 				std::cin >> number;
 				std::cout << "Value";
 				std::cin >> dvalue;
+				std::cout << "Result:" << std::endl;
 				if (number == 1) {
 					try {
 						matrix<float> res = first_matrix / dvalue;
@@ -339,8 +430,14 @@ int main()
 			case 6:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
 				std::cout << "Number of matrix?" << std::endl;
 				std::cin >> number;
+				std::cout << "Result:" << std::endl;
 				if (number == 1) {
 					try {
 						float res = first_matrix.Trace();
@@ -361,6 +458,18 @@ int main()
 				}
 				break;
 			}
+			case 7:
+			{
+				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;
+				(first_matrix == second_matrix) ? (std::cout << "Equal" << std::endl) : (std::cout << "Not equal" << std::endl);
+				break;
+			}
 			case 0:
 				system("cls");
 				choice = 0;
@@ -374,12 +483,19 @@ int main()
 	}
 	case 3:
 	{
+		system("cls");
 		std::cout << "First matrix:" << std::endl;
 		matrix<double> first_matrix = doubleinit();
+		system("cls");
 		std::cout << "Second matrix:" << std::endl;
 		matrix<double> second_matrix = doubleinit();
+		system("cls");
 		while (choice)
 		{
+			std::cout << "First matrix:" << std::endl;
+			std::cout << first_matrix << std::endl;
+			std::cout << "Second matrix:" << std::endl;
+			std::cout << second_matrix << std::endl;
 			std::cout << menu;
 			std::cin >> choice;
 			switch (choice)
@@ -387,6 +503,12 @@ int main()
 			case 1:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;
 				try {
 					matrix<double> res = first_matrix + second_matrix;
 					std::cout << res << std::endl;
@@ -399,6 +521,12 @@ int main()
 			case 2:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;
 				try {
 					matrix<double> res = first_matrix - second_matrix;
 					std::cout << res << std::endl;
@@ -411,6 +539,12 @@ int main()
 			case 3:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;
 				try {
 					matrix<double> res = first_matrix * second_matrix;
 					std::cout << res << std::endl;
@@ -423,11 +557,17 @@ int main()
 			case 4:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
 				double mvalue;
 				std::cout << "Number of matrix?" << std::endl;
 				std::cin >> number;
 				std::cout << "Value:";
 				std::cin >> mvalue;
+				std::cout << "Result:" << std::endl;
 				if (number == 1) {
 					try {
 						auto res = first_matrix * mvalue;
@@ -451,11 +591,17 @@ int main()
 			case 5:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
 				double dvalue;
 				std::cout << "Number of matrix?" << std::endl;
 				std::cin >> number;
 				std::cout << "Value:";
 				std::cin >> dvalue;
+				std::cout << "Result:" << std::endl;
 				if (number == 1) {
 					try {
 						matrix<double> res = first_matrix / dvalue;
@@ -479,8 +625,14 @@ int main()
 			case 6:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
 				std::cout << "Number of matrix?" << std::endl;
 				std::cin >> number;
+				std::cout << "Result:" << std::endl;
 				if (number == 1) {
 					try {
 						double res = first_matrix.Trace();
@@ -501,6 +653,18 @@ int main()
 				}
 				break;
 			}
+			case 7:
+			{
+				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;
+				(first_matrix == second_matrix) ? (std::cout << "Equal" << std::endl) : (std::cout << "Not equal" << std::endl);
+				break;
+			}
 			case 0:
 				system("cls");
 				choice = 0;
@@ -513,12 +677,19 @@ int main()
 	}
 	case 4:
 	{
+		system("cls");
 		std::cout << "First matrix:" << std::endl;
 		matrix<std::complex<float>> first_matrix = cfloatinit();
+		system("cls");
 		std::cout << "Second matrix:" << std::endl;
 		matrix<std::complex<float>> second_matrix = cfloatinit();
+		system("cls");
 		while (choice)
 		{
+			std::cout << "First matrix:" << std::endl;
+			std::cout << first_matrix << std::endl;
+			std::cout << "Second matrix:" << std::endl;
+			std::cout << second_matrix << std::endl;
 			std::cout << menu;
 			std::cin >> choice;
 			switch (choice)
@@ -526,6 +697,12 @@ int main()
 			case 1:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;
 				try {
 					matrix<std::complex<float>> res = first_matrix + second_matrix;
 					std::cout << res << std::endl;
@@ -538,6 +715,12 @@ int main()
 			case 2:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;
 				try {
 					matrix<std::complex<float>> res = first_matrix - second_matrix;
 					std::cout << res << std::endl;
@@ -550,6 +733,12 @@ int main()
 			case 3:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;
 				try {
 					matrix<std::complex<float>> res = first_matrix * second_matrix;
 					std::cout << res << std::endl;
@@ -562,6 +751,11 @@ int main()
 			case 4:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
 				float mre, mim;
 				std::cout << "Number of matrix?" << std::endl;
 				std::cin >> number;
@@ -571,6 +765,7 @@ int main()
 				std::cout << "Imaginary part:";
 				std::cin >> mim;
 				std::complex<float> mvalue(mre, mim);
+				std::cout << "Result:" << std::endl;
 				if (number == 1) {
 					try {
 						matrix<std::complex<float>> res = first_matrix * mvalue;
@@ -594,6 +789,11 @@ int main()
 			case 5:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
 				float dre, dim;
 				std::cout << "Number of matrix?" << std::endl;
 				std::cin >> number;
@@ -603,6 +803,7 @@ int main()
 				std::cout << "Imaginary part:";
 				std::cin >> dim;
 				std::complex<float> dvalue(dre, dim);
+				std::cout << "Result:" << std::endl;
 				if (number == 1) {
 					try {
 						matrix<std::complex<float>> res = first_matrix / dvalue;
@@ -626,8 +827,14 @@ int main()
 			case 6:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
 				std::cout << "Number of matrix?" << std::endl;
 				std::cin >> number;
+				std::cout << "Result:" << std::endl;
 				if (number == 1) {
 					try {
 						std::complex<float> res = first_matrix.Trace();
@@ -648,6 +855,18 @@ int main()
 				}
 				break;
 			}
+			case 7:
+			{
+				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;				
+				(first_matrix == second_matrix) ? (std::cout << "Equal" << std::endl) : (std::cout << "Not equal" << std::endl);
+				break;
+			}
 			case 0:
 				system("cls");
 				choice = 0;
@@ -660,12 +879,19 @@ int main()
 	}
 	case 5:
 	{
+		system("cls");
 		std::cout << "First matrix:" << std::endl;
 		matrix<std::complex<double>> first_matrix = cdoubleinit();
+		system("cls");
 		std::cout << "Second matrix:" << std::endl;
 		matrix<std::complex<double>> second_matrix = cdoubleinit();
+		system("cls");
 		while (choice)
 		{
+			std::cout << "First matrix:" << std::endl;
+			std::cout << first_matrix << std::endl;
+			std::cout << "Second matrix:" << std::endl;
+			std::cout << second_matrix << std::endl;
 			std::cout << menu;
 			std::cin >> choice;
 			switch (choice)
@@ -673,6 +899,12 @@ int main()
 			case 1:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;				
 				try {
 					matrix<std::complex<double>> res = first_matrix + second_matrix;
 					std::cout << res << std::endl;
@@ -685,6 +917,12 @@ int main()
 			case 2:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;				
 				try {
 					matrix<std::complex<double>> res = first_matrix - second_matrix;
 					std::cout << res << std::endl;
@@ -697,6 +935,12 @@ int main()
 			case 3:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;				
 				try {
 					matrix<std::complex<double>> res = first_matrix * second_matrix;
 					std::cout << res << std::endl;
@@ -709,6 +953,11 @@ int main()
 			case 4:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
 				double mre, mim;
 				std::cout << "Number of matrix?" << std::endl;
 				std::cin >> number;
@@ -718,6 +967,7 @@ int main()
 				std::cout << "Imaginary part:";
 				std::cin >> mim;
 				std::complex<double> mvalue(mre, mim);
+				std::cout << "Result:" << std::endl;
 				if (number == 1) {
 					try {
 						matrix<std::complex<double>> res = first_matrix * mvalue;
@@ -741,6 +991,11 @@ int main()
 			case 5:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
 				double dre, dim;
 				std::cout << "Number of matrix?" << std::endl;
 				std::cin >> number;
@@ -750,6 +1005,7 @@ int main()
 				std::cout << "Imaginary part:";
 				std::cin >> dim;
 				std::complex<double> dvalue(dre, dim);
+				std::cout << "Result:" << std::endl;
 				if (number == 1) {
 					try {
 						matrix<std::complex<double>> res = first_matrix / dvalue;
@@ -773,8 +1029,20 @@ int main()
 			case 6:
 			{
 				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");	
 				std::cout << "Number of matrix?" << std::endl;
+				std::cout << "Result:" << std::endl;
 				std::cin >> number;
+				std::cout << "Result:" << std::endl;
 				if (number == 1) {
 					try {
 						std::complex<double> res = first_matrix.Trace();
@@ -793,6 +1061,18 @@ int main()
 						std::cout << err << std::endl;
 					}
 				}
+				break;
+			}
+			case 7:
+			{
+				system("cls");
+				std::cout << "First matrix:" << std::endl;
+				std::cout << first_matrix << std::endl;
+				std::cout << "Second matrix:" << std::endl;
+				std::cout << second_matrix << std::endl;
+				system("cls");
+				std::cout << "Result:" << std::endl;				
+				(first_matrix == second_matrix) ? (std::cout << "Equal" << std::endl) : (std::cout << "Not equal" << std::endl);
 				break;
 			}
 			case 0:

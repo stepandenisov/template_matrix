@@ -10,7 +10,6 @@ private:
 	T** data;
 	unsigned size1;
 	unsigned size2;
-	static double epsilon;
 public:
 	matrix(const unsigned size1 = 2, const unsigned size2 = 2, const T value = 0)
 	{
@@ -28,7 +27,8 @@ public:
 				data[i][j] = value;
 			}
 		}
-	};
+	}
+
 	matrix(const matrix& cp)
 	{
 		this->size1 = cp.size1;
@@ -46,18 +46,20 @@ public:
 			}
 		}
 	}
+
 	const unsigned GetSize1() const { return size1; }
 	const unsigned GetSize2() const { return size2; }
+
 	T& operator()(const unsigned x, const unsigned y)
 	{
 		if ((x >= size1) || (x < 0)) { throw"Invalid Index"; }
 		if ((y >= size2) || (y < 0)) { throw"Invelid Index"; }
 		return data[x][y];
 	}
+
 	matrix operator+(matrix& m2)
 	{
-		if (typeid(*this) != typeid(m2)) { throw"Different types"; }
-		if ((this->size1 != m2.size1) || (this->size2 != m2.size2)) { throw"Different sizes"; }
+		if ((this->size1 != m2.size1) || (this->size2 != m2.size2)) { throw"Different sizes;"; }
 		matrix res(size1, size2, 0);
 		for (unsigned i = 0; i < size1; i++)
 		{
@@ -68,10 +70,10 @@ public:
 		}
 		return res;
 	}
+
 	matrix operator-(matrix& m2)
 	{
-		if (typeid(*this) != typeid(m2)) { throw"Different types"; }
-		if ((this->size1 != m2.size1) || (this->size2 != m2.size2)) throw"Different sizes";
+		if ((this->size1 != m2.size1) || (this->size2 != m2.size2)) { throw"Different sizes;"; }
 		matrix res(size1, size2, 0);
 		for (unsigned i = 0; i < size1; i++)
 		{
@@ -82,10 +84,10 @@ public:
 		}
 		return res;
 	}
+
 	matrix operator*(matrix& m2)
 	{
-		if (typeid(*this) != typeid(m2)) { throw"Different types"; }
-		if (this->size2 != m2.size1) throw"Multiplication is impossible";
+		if (this->size2 != m2.size1) { throw"Multiplication is impossible"; }
 		matrix res(this->size1, m2.size2);
 		for (unsigned i = 0; i < res.size1; i++)
 		{
@@ -98,10 +100,9 @@ public:
 		}
 		return res;
 	}
+
 	matrix operator/(T v)
 	{
-		//if ((typeid(v) == typeid(std::complex<double>)) && (v == std::complex<double>(0,0))) { throw"Division by zero"; }
-		//else if ((typeid(v) == typeid(std::complex<float>)) && (v == std::complex<float>(0,0))) { throw"Division by zero"; }
 		if (abs(v) == 0) { throw"Division by zero"; }
 		matrix res(size1, size2);
 		for (unsigned i = 0; i < size1; i++)
@@ -113,6 +114,7 @@ public:
 		}
 		return res;
 	}
+
 	T Trace()
 	{
 		if (size1 != size2) { throw "It is not a square matrix"; }
@@ -126,6 +128,7 @@ public:
 		}
 		return res;
 	}
+
 	friend std::ostream& operator<<(std::ostream& out, matrix& m1)
 	{
 		for (unsigned i = 0; i < m1.size1; i++)
@@ -139,6 +142,7 @@ public:
 		}
 		return out;
 	}
+
 	friend matrix operator*(matrix& m1, const T value)
 	{
 		matrix res(m1.size1, m1.size2);
@@ -151,27 +155,27 @@ public:
 		}
 		return res;
 	}
+
 	friend matrix operator*(const T value, matrix& m1)
 	{
-		return operator*(m1, value);
+		return m1*value;
 	}
+
 	friend bool operator==(matrix& m1, matrix& m2)
 	{
-		if (typeid(m1) != typeid(m2)) { throw"Different types"; }
 		if ((m1.size1 != m2.size1) || (m1.size2 != m2.size2)) { return false; }
 		for (unsigned i = 0; i < m1.size1; i++)
 		{
 			for (unsigned j = 0; j < m1.size2; j++)
 			{
-				if (fabs(m1(i, j) - m2(i, j)) > m1.epsilon) { return false; }
+				if (abs(m1(i, j) != m2(i, j))) { return false; }
 			}
 		}
 		return true;
 	}
+
 	friend bool operator!=(matrix& m1, matrix& m2)
 	{
-		if (typeid(m1) != typeid(m2)) { throw"Different types"; }
 		return !(operator==(m1, m2));
 	}
 };
-
